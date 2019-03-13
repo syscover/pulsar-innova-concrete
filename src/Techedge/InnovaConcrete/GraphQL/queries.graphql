@@ -1,0 +1,39 @@
+# Characteristic
+""" Query to get characteristics list """
+innovaConcreteChatacteristics(sql:[CoreSQLInput]): [InnovaConcreteCharacteristic!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@get")
+""" Query to get characteristic """
+innovaConcreteCharacteristic(sql:[CoreSQLInput]): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@find")
+""" Query to get characteristics paginated """
+innovaConcreteChatacteristicsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@paginate")
+
+# Group
+""" Query to get groups list """
+innovaConcreteGroups(sql:[CoreSQLInput]): [InnovaConcreteGroup!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\GroupGraphQLService@get")
+""" Query to get group """
+innovaConcreteGroup(sql:[CoreSQLInput]): InnovaConcreteGroup @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\GroupGraphQLService@find")
+""" Query to get groups paginated """
+innovaConcreteGroupsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\GroupGraphQLService@paginate")
+
+# Monument
+""" Query to get characteristics list """
+innovaConcreteChatacteristics(sql:[CoreSQLInput]): [InnovaConcreteCharacteristic!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@get")
+""" Query to get characteristic """
+innovaConcreteCharacteristic(sql:[CoreSQLInput]): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@find")
+""" Query to get characteristics paginated """
+innovaConcreteChatacteristicsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@paginate")
+
+# People
+""" Query to get peoples list """
+innovaConcretePeoples(sql:[CoreSQLInput]): [InnovaConcretePeople!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@get")
+""" Query to get people """
+innovaConcretePeople(sql:[CoreSQLInput]): InnovaConcretePeople @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@find")
+""" Query to get peoples paginated """
+innovaConcretePeoplesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@paginate")
+
+# Type
+""" Query to get types list """
+innovaConcreteTypes(sql:[CoreSQLInput]): [InnovaConcreteType!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\TypeGraphQLService@get")
+""" Query to get type """
+innovaConcreteType(sql:[CoreSQLInput]): InnovaConcreteType @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\TypeGraphQLService@find")
+""" Query to get types paginated """
+innovaConcreteTypesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\TypeGraphQLService@paginate")

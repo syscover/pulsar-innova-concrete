@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class InnovaConcreteCreateTablePeople extends Migration
+class InnovaConcreteCreateTableCharacteristic extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -23,7 +23,7 @@ class InnovaConcreteCreateTablePeople extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->foreign('group_id', 'fk01_innova_concrete_characteristic')
+                $table->foreign('type_id', 'fk01_innova_concrete_characteristic')
                     ->references('id')
                     ->on('innova_concrete_type')
                     ->onDelete('restrict')

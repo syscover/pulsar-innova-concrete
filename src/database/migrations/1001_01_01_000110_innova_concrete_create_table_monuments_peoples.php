@@ -20,7 +20,7 @@ class InnovaConcreteCreateTableMonumentsPeoples extends Migration {
                 $table->integer('monument_id')->unsigned();
                 $table->integer('people_id')->unsigned();
 
-                $table->primary(['monument_id', 'people_id']);
+                $table->primary(['monument_id', 'people_id'], 'pk01_innova_concrete_monuments_peoples');
             });
         }
 	}

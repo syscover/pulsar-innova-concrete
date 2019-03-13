@@ -1,0 +1,45 @@
+type InnovaConcreteGroup {
+    id: String!
+    name: String!
+}
+
+type InnovaConcretePeople {
+    id: String!
+    group_id: String!
+    name: String!
+}
+
+type InnovaConcreteType {
+    id: String!
+    name: String!
+}
+
+type InnovaConcreteCharacteristic {
+    id: String!
+    type_id: String!
+    name: String!
+}
+
+type InnovaConcreteMonument {
+    id: String!
+    original_name: String
+    current_name: String!
+    other_denominations: String
+    original_use: String
+    current_use: String
+    commission: Int
+    completion: Int
+    description: String
+    rapporteur_name: String
+    rapporteur_email: String
+    rapporteur_date: String
+    percentage_progress: Int
+    links: Json
+    country_id: String!
+    province: String
+    address: String
+    locality: String!
+    zip: String
+    latitude: Float
+    longitude: Float
+}

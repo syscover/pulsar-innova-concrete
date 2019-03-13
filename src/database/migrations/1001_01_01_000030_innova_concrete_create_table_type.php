@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class InnovaConcreteCreateTableGroup extends Migration
+class InnovaConcreteCreateTableType extends Migration
 {
 	/**
 	 * Run the migrations.

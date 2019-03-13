@@ -29,7 +29,7 @@ class InnovaConcreteCreateTableMonument extends Migration
                 $table->string('rapporteur_name')->nullable();
                 $table->string('rapporteur_email')->nullable();
                 $table->integer('rapporteur_date')->unsigned()->nullable();
-                $table->tinyInteger('percentage')->unsigned()->nullable();
+                $table->tinyInteger('percentage_progress')->unsigned()->nullable();
                 $table->json('links')->nullable(); // object [{name:'',url:''}]
 
                 // geolocation data

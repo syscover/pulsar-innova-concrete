@@ -20,7 +20,7 @@ class InnovaConcreteCreateTableMonumentsCharacteristics extends Migration {
                 $table->integer('monument_id')->unsigned();
                 $table->integer('characteristic_id')->unsigned();
 
-                $table->primary(['monument_id', 'characteristic_id']);
+                $table->primary(['monument_id', 'characteristic_id'], 'pk01_innova_concrete_monuments_characteristics');
             });
         }
 	}
