@@ -11,6 +11,7 @@ class Characteristic extends CoreModel
 {
 	protected $table        = 'innova_concrete_characteristic';
     protected $fillable     = ['name', 'type_id'];
+    public $with            = ['type'];
 
     public function type()
     {

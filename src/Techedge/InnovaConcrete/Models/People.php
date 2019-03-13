@@ -11,6 +11,7 @@ class People extends CoreModel
 {
 	protected $table        = 'innova_concrete_people';
     protected $fillable     = ['name', 'group_id'];
+    public $with            = ['group'];
 
     public function group()
     {
