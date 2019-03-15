@@ -17,6 +17,7 @@ type InnovaConcreteType {
 type InnovaConcreteCharacteristic {
     id: String!
     type_id: String!
+    type: InnovaConcreteType!
     name: String!
 }
 

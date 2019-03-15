@@ -4,7 +4,7 @@ innovaConcreteChatacteristics(sql:[CoreSQLInput]): [InnovaConcreteCharacteristic
 """ Query to get characteristic """
 innovaConcreteCharacteristic(sql:[CoreSQLInput]): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@find")
 """ Query to get characteristics paginated """
-innovaConcreteChatacteristicsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@paginate")
+innovaConcreteCharacteristicsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@paginate")
 
 # Group
 """ Query to get groups list """

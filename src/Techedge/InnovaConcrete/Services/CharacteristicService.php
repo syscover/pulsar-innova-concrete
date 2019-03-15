@@ -2,7 +2,7 @@
 
 use Syscover\Core\Exceptions\ModelNotChangeException;
 use Syscover\Core\Services\Service;
-use Techedge\InnovaConcrete\Models\Type;
+use Techedge\InnovaConcrete\Models\Characteristic;
 
 class CharacteristicService extends Service
 {
@@ -10,10 +10,10 @@ class CharacteristicService extends Service
     {
         $this->validate($data, [
             'name'      => 'required|between:2,255',
-            'type_id'  => 'required|exists:innova_concrete_type,id'
+            'type_id'   => 'required|exists:innova_concrete_type,id'
         ]);
 
-        Type::create($data);
+        Characteristic::create($data);
     }
 
     public function update(array $data, int $id)
@@ -24,7 +24,7 @@ class CharacteristicService extends Service
             'type_id'   => 'required|exists:innova_concrete_type,id'
         ]);
 
-        $object = Type::findOrFail($id);
+        $object = Characteristic::findOrFail($id);
 
         $object->fill($data);
 

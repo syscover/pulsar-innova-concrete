@@ -1,24 +1,24 @@
 # Characteristic
-innovaConcreteCreateCharacteristic(payload:InnovaConcreteCharacteristicInput!): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@create")
+innovaConcreteCreateCharacteristic(payload:InnovaConcreteCharacteristicInput!): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@store")
 innovaConcreteUpdateCharacteristic(payload:InnovaConcreteCharacteristicInput!): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@update")
 innovaConcreteDeleteCharacteristic(id:Int!): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@delete")
 
 # Group
-innovaConcreteCreateGroup(payload:InnovaConcreteGroupInput!): InnovaConcreteGroup @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\GroupGraphQLService@create")
+innovaConcreteCreateGroup(payload:InnovaConcreteGroupInput!): InnovaConcreteGroup @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\GroupGraphQLService@store")
 innovaConcreteUpdateGroup(payload:InnovaConcreteGroupInput!): InnovaConcreteGroup @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\GroupGraphQLService@update")
 innovaConcreteDeleteGroup(id:Int!): InnovaConcreteGroup @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\GroupGraphQLService@delete")
 
+# Monument
+innovaConcreteCreateMonument(payload:InnovaConcreteMonumentInput!): InnovaConcreteMonument @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\MonumentGraphQLService@store")
+innovaConcreteUpdateMonument(payload:InnovaConcreteMonumentInput!): InnovaConcreteMonument @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\MonumentGraphQLService@update")
+innovaConcreteDeleteMonument(id:Int!): InnovaConcreteMonument @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\MonumentGraphQLService@delete")
+
 # People
-innovaConcreteCreatePeople(payload:InnovaConcretePeopleInput!): InnovaConcretePeople @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@create")
+innovaConcreteCreatePeople(payload:InnovaConcretePeopleInput!): InnovaConcretePeople @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@store")
 innovaConcreteUpdatePeople(payload:InnovaConcretePeopleInput!): InnovaConcretePeople @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@update")
 innovaConcreteDeletePeople(id:Int!): InnovaConcretePeople @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@delete")
 
 # Type
-innovaConcreteCreateType(payload:InnovaConcreteTypeInput!): InnovaConcreteType @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\TypeGraphQLService@create")
+innovaConcreteCreateType(payload:InnovaConcreteTypeInput!): InnovaConcreteType @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\TypeGraphQLService@store")
 innovaConcreteUpdateType(payload:InnovaConcreteTypeInput!): InnovaConcreteType @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\TypeGraphQLService@update")
 innovaConcreteDeleteType(id:Int!): InnovaConcreteType @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\TypeGraphQLService@delete")
-
-# Monument
-innovaConcreteCreateMonument(payload:InnovaConcreteMonumentInput!): InnovaConcreteMonument @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\MonumentGraphQLService@create")
-innovaConcreteUpdateMonument(payload:InnovaConcreteMonumentInput!): InnovaConcreteMonument @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\MonumentGraphQLService@update")
-innovaConcreteDeleteMonument(id:Int!): InnovaConcreteMonument @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\MonumentGraphQLService@delete")
