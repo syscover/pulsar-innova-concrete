@@ -1,27 +1,27 @@
 input InnovaConcreteGroupInput {
-    id: String
+    id: Int
     name: String!
 }
 
 input InnovaConcretePeopleInput {
-    id: String
+    id: Int
     group_id: String!
     name: String!
 }
 
 input InnovaConcreteTypeInput {
-    id: String
+    id: Int
     name: String!
 }
 
 input InnovaConcreteCharacteristicInput {
-    id: String
+    id: Int
     type_id: String!
     name: String!
 }
 
 input InnovaConcreteMonumentInput {
-    id: String
+    id: Int
     original_name: String
     current_name: String!
     other_denominations: String

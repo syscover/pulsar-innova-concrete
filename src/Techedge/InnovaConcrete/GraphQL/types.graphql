@@ -1,28 +1,29 @@
 type InnovaConcreteGroup {
-    id: String!
+    id: Int!
     name: String!
 }
 
 type InnovaConcretePeople {
-    id: String!
-    group_id: String!
+    id: Int!
+    group_id: Int!
+    group: InnovaConcreteGroup!
     name: String!
 }
 
 type InnovaConcreteType {
-    id: String!
+    id: Int!
     name: String!
 }
 
 type InnovaConcreteCharacteristic {
-    id: String!
-    type_id: String!
+    id: Int!
+    type_id: Int!
     type: InnovaConcreteType!
     name: String!
 }
 
 type InnovaConcreteMonument {
-    id: String!
+    id: Int!
     original_name: String
     current_name: String!
     other_denominations: String

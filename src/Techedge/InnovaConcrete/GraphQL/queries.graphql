@@ -23,11 +23,11 @@ innovaConcreteCharacteristic(sql:[CoreSQLInput]): InnovaConcreteCharacteristic @
 innovaConcreteChatacteristicsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@paginate")
 
 # People
-""" Query to get peoples list """
+""" Query to get people list """
 innovaConcretePeoples(sql:[CoreSQLInput]): [InnovaConcretePeople!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@get")
-""" Query to get people """
+""" Query to get person """
 innovaConcretePeople(sql:[CoreSQLInput]): InnovaConcretePeople @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@find")
-""" Query to get peoples paginated """
+""" Query to get people paginated """
 innovaConcretePeoplesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\PeopleGraphQLService@paginate")
 
 # Type
