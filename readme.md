@@ -33,3 +33,16 @@ php artisan db:seed --class="InnovaConcreteTableSeeder"
 ```
 php artisan migrate --path=vendor/techedge/pulsar-innnova-concrete/src/database/migrations/updates
 ```
+
+**5 - Add graphQL routes to graphql/schema.graphql file**
+```
+# Innova Concrete types
+#import ./../vendor/techedge/pulsar-innova-concrete/src/Techedge/InnovaConcrete/GraphQL/inputs.graphql
+#import ./../vendor/techedge/pulsar-innova-concrete/src/Techedge/InnovaConcrete/GraphQL/types.graphql
+
+# Innova Concrete queries
+#import ./../vendor/techedge/pulsar-innova-concrete/src/Techedge/InnovaConcrete/GraphQL/queries.graphql
+
+# Innova Concrete mutations
+#import ./../vendor/techedge/pulsar-innova-concrete/src/Techedge/InnovaConcrete/GraphQL/mutations.graphql
+```
