@@ -10,7 +10,7 @@ use Syscover\Core\Models\CoreModel;
 class Monument extends CoreModel
 {
 	protected $table        = 'innova_concrete_monument';
-    protected $fillable     = ['id', 'original_name', 'current_name', 'other_denominations', 'original_use', 'current_use', 'commission', 'completion', 'description', 'rapporteur_name', 'rapporteur_email', 'rapporteur_date', 'percentage_progress', 'links', 'country_id', 'province', 'address', 'locality', 'zip', 'latitude', 'longitude'];
+    protected $fillable     = ['id', 'original_name', 'current_name', 'slug', 'other_denominations', 'original_use', 'current_use', 'commission', 'completion', 'description', 'rapporteur_name', 'rapporteur_email', 'rapporteur_date', 'percentage_progress', 'links', 'country_id', 'province', 'address', 'locality', 'zip', 'latitude', 'longitude'];
     public $with            = ['peoples', 'characteristics'];
 
     public function peoples()

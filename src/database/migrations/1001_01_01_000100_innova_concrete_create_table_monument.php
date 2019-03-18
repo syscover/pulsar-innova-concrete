@@ -20,22 +20,23 @@ class InnovaConcreteCreateTableMonument extends Migration
                 $table->increments('id');
 				$table->string('original_name')->nullable();
                 $table->string('current_name');
+                $table->string('slug');
                 $table->string('other_denominations')->nullable();
                 $table->string('original_use')->nullable();
                 $table->string('current_use')->nullable();
                 $table->integer('commission')->unsigned()->nullable();
                 $table->integer('completion')->unsigned()->nullable();
-                $table->text('description')->nullable();
                 $table->string('rapporteur_name')->nullable();
                 $table->string('rapporteur_email')->nullable();
                 $table->integer('rapporteur_date')->unsigned()->nullable();
                 $table->tinyInteger('percentage_progress')->unsigned()->nullable();
                 $table->json('links')->nullable(); // object [{name:'',url:''}]
+                $table->text('description')->nullable();
 
                 // geolocation data
+                $table->string('address')->nullable();
                 $table->string('country_id', 2);
                 $table->string('province')->nullable();
-                $table->string('address')->nullable();
                 $table->string('locality');
                 $table->string('zip')->nullable();
                 $table->decimal('latitude', 17, 14);
@@ -43,6 +44,8 @@ class InnovaConcreteCreateTableMonument extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->index('slug', 'ix01_innova_concrete_monument');
 			});
 		}
 	}

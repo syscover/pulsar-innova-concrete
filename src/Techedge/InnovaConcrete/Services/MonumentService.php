@@ -11,6 +11,7 @@ class MonumentService extends Service
         $this->validate($data, [
             'original_name'         => 'nullable|between:2,255',
             'current_name'          => 'required|between:2,255',
+            'slug'                  => 'required|between:2,255',
             'other_denominations'   => 'nullable|between:2,255',
             'original_use'          => 'nullable|between:2,255',
             'current_use'           => 'nullable|between:2,255',
@@ -39,6 +40,7 @@ class MonumentService extends Service
             'id'                    => 'numeric',
             'original_name'         => 'nullable|between:2,255',
             'current_name'          => 'required|between:2,255',
+            'slug'                  => 'required|between:2,255',
             'other_denominations'   => 'nullable|between:2,255',
             'original_use'          => 'nullable|between:2,255',
             'current_use'           => 'nullable|between:2,255',

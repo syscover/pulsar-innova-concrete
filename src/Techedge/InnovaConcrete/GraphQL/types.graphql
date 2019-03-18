@@ -26,6 +26,7 @@ type InnovaConcreteMonument {
     id: Int!
     original_name: String
     current_name: String!
+    slug: String!
     other_denominations: String
     original_use: String
     current_use: String
