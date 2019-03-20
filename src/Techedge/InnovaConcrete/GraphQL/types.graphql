@@ -30,6 +30,7 @@ type InnovaConcreteMonument {
     other_denominations: String
     original_use: String
     current_use: String
+    peoples: [InnovaConcretePeople]
     commission: Int
     completion: Int
     description: String
@@ -39,6 +40,7 @@ type InnovaConcreteMonument {
     percentage_progress: Int
     links: Json
     country_id: String!
+    countries: [AdminCountry!]!
     province: String
     address: String
     locality: String!

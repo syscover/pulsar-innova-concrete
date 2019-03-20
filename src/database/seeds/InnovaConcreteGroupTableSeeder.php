@@ -8,9 +8,10 @@ class InnovaConcreteGroupTableSeeder extends Seeder {
     public function run()
     {
         Group::insert([
-            ['id' => 1,     'name' => 'Engineers'],
-            ['id' => 2,     'name' => 'Artists'],
-            ['id' => 3,     'name' => 'Others']
+            ['id' => 1,     'name' => 'Architects'],
+            ['id' => 2,     'name' => 'Engineers'],
+            ['id' => 3,     'name' => 'Artists'],
+            ['id' => 4,     'name' => 'Others']
         ]);
     }
 }

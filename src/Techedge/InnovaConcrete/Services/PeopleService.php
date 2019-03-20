@@ -19,8 +19,8 @@ class PeopleService extends Service
     public function update(array $data, int $id)
     {
         $this->validate($data, [
-            'id'        => 'numeric',
-            'name'      => 'between:2,255',
+            'id'        => 'required|numeric',
+            'name'      => 'required|between:2,255',
             'group_id'  => 'required|exists:innova_concrete_group,id'
         ]);
 

@@ -19,7 +19,7 @@ class CharacteristicService extends Service
     public function update(array $data, int $id)
     {
         $this->validate($data, [
-            'id'        => 'numeric',
+            'id'        => 'required|numeric',
             'name'      => 'between:2,255',
             'type_id'   => 'required|exists:innova_concrete_type,id'
         ]);

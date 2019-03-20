@@ -28,6 +28,10 @@ input InnovaConcreteMonumentInput {
     other_denominations: String
     original_use: String
     current_use: String
+    architects_id: [Int]
+    engineers_id: [Int]
+    artists_id: [Int]
+    others_id: [Int]
     commission: Int
     completion: Int
     description: String

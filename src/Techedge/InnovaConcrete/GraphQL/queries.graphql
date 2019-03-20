@@ -1,6 +1,6 @@
 # Characteristic
 """ Query to get characteristics list """
-innovaConcreteChatacteristics(sql:[CoreSQLInput]): [InnovaConcreteCharacteristic!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@get")
+innovaConcreteCharacteristics(sql:[CoreSQLInput]): [InnovaConcreteCharacteristic!]! @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@get")
 """ Query to get characteristic """
 innovaConcreteCharacteristic(sql:[CoreSQLInput]): InnovaConcreteCharacteristic @field(resolver: "Techedge\\InnovaConcrete\\GraphQL\\Services\\CharacteristicGraphQLService@find")
 """ Query to get characteristics paginated """

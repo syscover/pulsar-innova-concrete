@@ -31,13 +31,18 @@ class MonumentService extends Service
             'longitude'             => 'numeric',
         ]);
 
-        Monument::create($data);
+        $object = Monument::create($data);
+
+        // set architects
+        if(! empty($object['architects_id'])) $object->architects()->sync($object['architects_id']);
+
+        return $object;
     }
 
     public function update(array $data, int $id)
     {
         $this->validate($data, [
-            'id'                    => 'numeric',
+            'id'                    => 'required|numeric',
             'original_name'         => 'nullable|between:2,255',
             'current_name'          => 'required|between:2,255',
             'slug'                  => 'required|between:2,255',
@@ -69,6 +74,21 @@ class MonumentService extends Service
 
         // save changes
         $object->save();
+
+        // peoples
+        $peoples = [];
+
+        // set relations
+        if(is_array($data['architects_id'])) $peoples = array_merge($peoples, $data['architects_id']);
+        if(is_array($data['engineers_id'])) $peoples = array_merge($peoples, $data['engineers_id']);
+        if(is_array($data['artists_id'])) $peoples = array_merge($peoples, $data['artists_id']);
+        if(is_array($data['others_id'])) $peoples = array_merge($peoples, $data['others_id']);
+
+        // set peoples
+        $object->peoples()->sync($peoples);
+
+        // characteristics
+        $characteristics = [];
 
         return $object;
     }
