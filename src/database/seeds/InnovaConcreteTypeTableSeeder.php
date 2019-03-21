@@ -8,9 +8,11 @@ class InnovaConcreteTypeTableSeeder extends Seeder {
     public function run()
     {
         Type::insert([
-            ['id' => 1,     'name' => 'Concrete use'],
-            ['id' => 2,     'name' => 'Construction method'],
-            ['id' => 3,     'name' => 'Construction system']
+            ['id' => 1,     'name' => 'Type of concrete by reinforcement'],
+            ['id' => 2,     'name' => 'Type of concrete'],
+            ['id' => 3,     'name' => 'Finishes - Architectural concrete'],
+            ['id' => 4,     'name' => 'Construction method'],
+            ['id' => 5,     'name' => 'Structural types - form/shape']
         ]);
     }
 }

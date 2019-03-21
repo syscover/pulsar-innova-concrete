@@ -32,6 +32,11 @@ input InnovaConcreteMonumentInput {
     engineers_id: [Int]
     artists_id: [Int]
     others_id: [Int]
+    reinforcement_types_id: [Int]
+    concrete_types_id: [Int]
+    finishes_id: [Int]
+    construction_methods_id: [Int]
+    structural_types_id: [Int]
     commission: Int
     completion: Int
     description: String

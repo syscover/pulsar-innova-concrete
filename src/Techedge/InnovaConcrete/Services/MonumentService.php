@@ -78,7 +78,7 @@ class MonumentService extends Service
         // peoples
         $peoples = [];
 
-        // set relations
+        // set people relations
         if(is_array($data['architects_id'])) $peoples = array_merge($peoples, $data['architects_id']);
         if(is_array($data['engineers_id'])) $peoples = array_merge($peoples, $data['engineers_id']);
         if(is_array($data['artists_id'])) $peoples = array_merge($peoples, $data['artists_id']);
@@ -89,6 +89,16 @@ class MonumentService extends Service
 
         // characteristics
         $characteristics = [];
+
+        // set characteristic relations
+        if(is_array($data['reinforcement_types_id'])) $characteristics = array_merge($characteristics, $data['reinforcement_types_id']);
+        if(is_array($data['concrete_types_id'])) $characteristics = array_merge($characteristics, $data['concrete_types_id']);
+        if(is_array($data['finishes_id'])) $characteristics = array_merge($characteristics, $data['finishes_id']);
+        if(is_array($data['construction_methods_id'])) $characteristics = array_merge($characteristics, $data['construction_methods_id']);
+        if(is_array($data['structural_types_id'])) $characteristics = array_merge($characteristics, $data['structural_types_id']);
+
+        // set characteristics
+        $object->characteristics()->sync($characteristics);
 
         return $object;
     }
