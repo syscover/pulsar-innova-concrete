@@ -52,4 +52,5 @@ input InnovaConcreteMonumentInput {
     zip: String
     latitude: Float
     longitude: Float
+    attachments: [AdminAttachmentInput]
 }

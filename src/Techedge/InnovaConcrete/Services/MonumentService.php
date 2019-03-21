@@ -2,10 +2,13 @@
 
 use Syscover\Core\Exceptions\ModelNotChangeException;
 use Syscover\Core\Services\Service;
+use Syscover\Admin\Traits\Attachable;
 use Techedge\InnovaConcrete\Models\Monument;
 
 class MonumentService extends Service
 {
+    use Attachable;
+
     public function store(array $data)
     {
         $this->validate($data, [
@@ -35,6 +38,15 @@ class MonumentService extends Service
 
         // set architects
         if(! empty($object['architects_id'])) $object->architects()->sync($object['architects_id']);
+
+        // set attachments
+        self::createAttachments(
+            $data['attachments'],
+            'storage/app/public/innova-concrete/monuments',
+            'storage/innova-concrete/monuments',
+            Monument::class,
+            $object->id
+        );
 
         return $object;
     }
@@ -99,6 +111,15 @@ class MonumentService extends Service
 
         // set characteristics
         $object->characteristics()->sync($characteristics);
+
+        // update attachments
+        self::updateAttachments(
+            $object['attachments'],
+            'storage/app/public/innova-concrete/monuments',
+            'storage/innova-concrete/monuments',
+            Monument::class,
+            $object->id
+        );
 
         return $object;
     }

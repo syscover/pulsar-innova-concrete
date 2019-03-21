@@ -1,6 +1,7 @@
 <?php namespace Techedge\InnovaConcrete\Models;
 
 use Syscover\Core\Models\CoreModel;
+use Syscover\Admin\Models\Attachment;
 use Syscover\Admin\Models\Country;
 
 /**
@@ -12,7 +13,7 @@ class Monument extends CoreModel
 {
 	protected $table        = 'innova_concrete_monument';
     protected $fillable     = ['id', 'original_name', 'current_name', 'slug', 'other_denominations', 'original_use', 'current_use', 'commission', 'completion', 'description', 'rapporteur_name', 'rapporteur_email', 'rapporteur_date', 'percentage_progress', 'links', 'country_id', 'province', 'address', 'locality', 'zip', 'latitude', 'longitude'];
-    public $with            = ['peoples', 'characteristics', 'countries'];
+    public $with            = ['peoples', 'characteristics', 'countries', 'attachments'];
 
     public function scopeBuilder($query)
     {
@@ -55,5 +56,16 @@ class Monument extends CoreModel
     public function countries()
     {
         return $this->hasMany(Country::class, 'id', 'country_id');
+    }
+
+    public function attachments()
+    {
+        return $this->morphMany(
+            Attachment::class,
+            'object',
+            'object_type',
+            'object_id',
+            'id'
+        )->orderBy('sort', 'asc');
     }
 }

@@ -48,4 +48,5 @@ type InnovaConcreteMonument {
     zip: String
     latitude: Float
     longitude: Float
+    attachments: [AdminAttachment]
 }
