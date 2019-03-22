@@ -114,7 +114,7 @@ class MonumentService extends Service
 
         // update attachments
         self::updateAttachments(
-            $object['attachments'],
+            $data['attachments'],
             'storage/app/public/innova-concrete/monuments',
             'storage/innova-concrete/monuments',
             Monument::class,
