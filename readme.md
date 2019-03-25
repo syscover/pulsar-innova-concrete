@@ -1,5 +1,3 @@
-# INNOVA CONCRETE
-
 ## Installation
 
 Before install sycover/pulsar-innnova-concrete, you need install syscover/pulsar-core and syscover/pulsar-admin
