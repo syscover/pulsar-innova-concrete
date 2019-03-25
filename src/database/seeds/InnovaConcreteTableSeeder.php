@@ -13,6 +13,7 @@ class InnovaConcreteTableSeeder extends Seeder
         $this->call(InnovaConcreteResourceTableSeeder::class);
         $this->call(InnovaConcreteGroupTableSeeder::class);
         $this->call(InnovaConcreteTypeTableSeeder::class);
+        $this->call(InnovaConcreteCharacteristicTableSeeder::class);
 
         Model::reguard();
     }
