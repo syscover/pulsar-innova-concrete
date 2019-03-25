@@ -1,4 +1,4 @@
-<?php namespace Techege\InnovaConcrete;
+<?php namespace Techedge\InnovaConcrete;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -4,7 +4,7 @@ Before install sycover/pulsar-innnova-concrete, you need install syscover/pulsar
 
 **1 - After install Laravel framework, execute on console:**
 ```
-composer require techedge/pulsar-innnova-concrete
+composer require techedge/pulsar-innova-concrete
 ```
 
 Register service provider, on file config/app.php add to providers array
