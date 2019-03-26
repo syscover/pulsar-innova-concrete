@@ -1,5 +1,6 @@
 <?php namespace Techedge\InnovaConcrete\Models;
 
+use Laravel\Scout\Searchable;
 use Syscover\Core\Models\CoreModel;
 use Syscover\Admin\Models\Attachment;
 use Syscover\Admin\Models\Country;
@@ -11,6 +12,8 @@ use Syscover\Admin\Models\Country;
 
 class Monument extends CoreModel
 {
+    use Searchable;
+
 	protected $table        = 'innova_concrete_monument';
     protected $fillable     = ['id', 'original_name', 'current_name', 'slug', 'other_denominations', 'original_use', 'current_use', 'commission', 'completion', 'description', 'rapporteur_name', 'rapporteur_email', 'rapporteur_date', 'percentage_progress', 'links', 'country_id', 'province', 'address', 'locality', 'zip', 'latitude', 'longitude'];
     protected $casts        = [
@@ -70,5 +73,38 @@ class Monument extends CoreModel
             'object_id',
             'id'
         )->orderBy('sort', 'asc');
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+
+       // 'links', 'country_id'
+
+
+        $searchable = [
+            'id'                    => $this->id,
+            'original_name'         => $this->original_name,
+            'current_name'          => $this->current_name,
+            'slug'                  => $this->slug,
+            'other_denominations'   => $this->other_denominations,
+            'original_use'          => $this->original_use,
+            'current_use'           => $this->current_use,
+            'description'           => $this->description,
+            'rapporteur_name'       => $this->rapporteur_name,
+            'province'              => $this->province,
+            'address'               => $this->address,
+            'locality'              => $this->locality,
+            'attachments'           => $this->attachments->map(function ($item, $key) {
+                $item['data'] = collect($item['data']);
+                return $item->only(['ix', 'id', 'lang_id', 'family_id', 'sort', 'alt', 'title', 'base_path', 'file_name', 'url', 'mime', 'extension', 'size', 'width', 'height', 'data', 'family']);
+            })
+        ];
+
+        return $searchable;
     }
 }
