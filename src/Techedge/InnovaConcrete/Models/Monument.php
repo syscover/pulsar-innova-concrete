@@ -96,6 +96,10 @@ class Monument extends CoreModel
             'current_use'           => $this->current_use,
             'description'           => $this->description,
             'rapporteur_name'       => $this->rapporteur_name,
+            'countries'             => $this->countries->map(function ($item, $key) {
+                $item['data'] = collect($item['data']);
+                return $item->only(['ix' ,'id', 'lang_id', 'name', 'slug', 'sort', 'prefix', 'territorial_area_1', 'territorial_area_2', 'territorial_area_3', 'zones', 'latitude', 'longitude', 'zoom']);
+            }),
             'province'              => $this->province,
             'address'               => $this->address,
             'locality'              => $this->locality,
