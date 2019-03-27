@@ -82,10 +82,6 @@ class Monument extends CoreModel
      */
     public function toSearchableArray()
     {
-
-       // 'links', 'country_id'
-
-
         $searchable = [
             'id'                    => $this->id,
             'original_name'         => $this->original_name,
@@ -97,7 +93,6 @@ class Monument extends CoreModel
             'description'           => $this->description,
             'rapporteur_name'       => $this->rapporteur_name,
             'countries'             => $this->countries->map(function ($item, $key) {
-                $item['data'] = collect($item['data']);
                 return $item->only(['ix' ,'id', 'lang_id', 'name', 'slug', 'sort', 'prefix', 'territorial_area_1', 'territorial_area_2', 'territorial_area_3', 'zones', 'latitude', 'longitude', 'zoom']);
             }),
             'province'              => $this->province,
