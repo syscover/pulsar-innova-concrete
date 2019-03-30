@@ -98,10 +98,9 @@ class Monument extends CoreModel
             'province'              => $this->province,
             'address'               => $this->address,
             'locality'              => $this->locality,
-            'attachments'           => $this->attachments->map(function ($item, $key) {
-                $item['data'] = collect($item['data']);
-                return $item->only(['ix', 'id', 'lang_id', 'family_id', 'sort', 'alt', 'title', 'base_path', 'file_name', 'url', 'mime', 'extension', 'size', 'width', 'height', 'data', 'family']);
-            })
+            'latitude'              => $this->latitude,
+            'longitude'             => $this->longitude,
+            'attachments'           => $this->attachments->toArray()
         ];
 
         return $searchable;
