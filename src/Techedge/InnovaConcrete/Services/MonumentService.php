@@ -36,8 +36,9 @@ class MonumentService extends Service
 
         $object = Monument::create($data);
 
-        // set architects
-        if(! empty($object['architects_id'])) $object->architects()->sync($object['architects_id']);
+        $this->setPeoples($object, $data);
+
+        $this->setCharacteristic($object, $data);
 
         // set attachments
         self::createAttachments(
@@ -87,30 +88,9 @@ class MonumentService extends Service
         // save changes
         $object->save();
 
-        // peoples
-        $peoples = [];
+        $this->setPeoples($object, $data);
 
-        // set people relations
-        if(is_array($data['architects_id'])) $peoples = array_merge($peoples, $data['architects_id']);
-        if(is_array($data['engineers_id'])) $peoples = array_merge($peoples, $data['engineers_id']);
-        if(is_array($data['artists_id'])) $peoples = array_merge($peoples, $data['artists_id']);
-        if(is_array($data['others_id'])) $peoples = array_merge($peoples, $data['others_id']);
-
-        // set peoples
-        $object->peoples()->sync($peoples);
-
-        // characteristics
-        $characteristics = [];
-
-        // set characteristic relations
-        if(is_array($data['reinforcement_types_id'])) $characteristics = array_merge($characteristics, $data['reinforcement_types_id']);
-        if(is_array($data['concrete_types_id'])) $characteristics = array_merge($characteristics, $data['concrete_types_id']);
-        if(is_array($data['finishes_id'])) $characteristics = array_merge($characteristics, $data['finishes_id']);
-        if(is_array($data['construction_methods_id'])) $characteristics = array_merge($characteristics, $data['construction_methods_id']);
-        if(is_array($data['structural_types_id'])) $characteristics = array_merge($characteristics, $data['structural_types_id']);
-
-        // set characteristics
-        $object->characteristics()->sync($characteristics);
+        $this->setCharacteristic($object, $data);
 
         // update attachments
         self::updateAttachments(
@@ -122,5 +102,34 @@ class MonumentService extends Service
         );
 
         return $object;
+    }
+
+    private function setPeoples(Monument $object, array $data)
+    {
+        $peoples = [];
+
+        // set people relations
+        if(is_array($data['architects_id'])) $peoples = array_merge($peoples, $data['architects_id']);
+        if(is_array($data['engineers_id'])) $peoples = array_merge($peoples, $data['engineers_id']);
+        if(is_array($data['artists_id'])) $peoples = array_merge($peoples, $data['artists_id']);
+        if(is_array($data['others_id'])) $peoples = array_merge($peoples, $data['others_id']);
+
+        // set peoples
+        $object->peoples()->sync($peoples);
+    }
+
+    private function setCharacteristic(Monument $object, array $data)
+    {
+        $characteristics = [];
+
+        // set characteristic relations
+        if(is_array($data['reinforcement_types_id'])) $characteristics = array_merge($characteristics, $data['reinforcement_types_id']);
+        if(is_array($data['concrete_types_id'])) $characteristics = array_merge($characteristics, $data['concrete_types_id']);
+        if(is_array($data['finishes_id'])) $characteristics = array_merge($characteristics, $data['finishes_id']);
+        if(is_array($data['construction_methods_id'])) $characteristics = array_merge($characteristics, $data['construction_methods_id']);
+        if(is_array($data['structural_types_id'])) $characteristics = array_merge($characteristics, $data['structural_types_id']);
+
+        // set characteristics
+        $object->characteristics()->sync($characteristics);
     }
 }
