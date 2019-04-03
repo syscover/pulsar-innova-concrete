@@ -100,6 +100,8 @@ class Monument extends CoreModel
             'locality'              => $this->locality,
             'latitude'              => $this->latitude,
             'longitude'             => $this->longitude,
+            'peoples'               => $this->peoples->toArray(),
+            'characteristics'       => $this->characteristics->toArray(),
             'attachments'           => $this->attachments->toArray()
         ];
 
