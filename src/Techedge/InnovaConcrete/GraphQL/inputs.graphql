@@ -18,6 +18,8 @@ input InnovaConcreteCharacteristicInput {
     id: Int
     type_id: String!
     name: String!
+    description: String
+    attachments: [AdminAttachmentInput]
 }
 
 input InnovaConcreteMonumentInput {

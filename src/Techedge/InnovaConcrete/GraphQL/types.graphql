@@ -20,6 +20,8 @@ type InnovaConcreteCharacteristic {
     type_id: Int!
     type: InnovaConcreteType!
     name: String!
+    description: String
+    attachments: [AdminAttachment]
 }
 
 type InnovaConcreteMonument {
